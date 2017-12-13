@@ -1,9 +1,15 @@
-sudo: required
+language: ruby
+rvm: 2.3.1
+
 dist: trusty
 
-language: ruby
+matrix:
+  include:
+    - sudo: required
+      group: travis_lts
+      env: SUDO=required GROUP=travis_lts
 
-install:
+install: true
 script:
-  - gem install bundler
-  - bundler --version
+  - yarn global install bower
+  - bower --version
