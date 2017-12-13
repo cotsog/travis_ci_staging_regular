@@ -11,5 +11,5 @@ matrix:
 
 install: true
 script:
-  - yarn global install bower
+  - yarn global add bower
   - bower --version
