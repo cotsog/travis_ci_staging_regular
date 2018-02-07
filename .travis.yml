@@ -1,16 +1,6 @@
-# trigger
-language: ruby
-rvm: 2.3.1
+language: objective-c
 
-dist: trusty
-
-matrix:
-  include:
-    - sudo: required
-      group: travis_lts
-      env: SUDO=required GROUP=travis_lts
+osx_image: xcode9.3
 
 install: true
-script:
-  - yarn global add bower
-  - bower --version
+script: true
