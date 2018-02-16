@@ -1,6 +1,9 @@
-os:
-  - linux
-  - osx
+matrix:
+  include:
+    - os: linux
+      sudo: false
+      dist: trusty
+    - os: osx
 language: cpp
 
 install: true
