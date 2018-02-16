@@ -1,8 +1,9 @@
-matrix:
-  include:
-    - language: android
-    - language: objective-c
-      osx_image: xcode9.3beta
+os:
+  - linux
+    sudo: false
+    dist: trusty
+  - osx
+language: cpp
 
 install: true
 script: true
