@@ -11,5 +11,5 @@ script:
   - echo $PATH
   - ls -al `which yarn`
   - cat `which yarn`
-  - chmod +x fake-yarn.sh && ./fake-yarn.sh --version
+  - chmod +x fake-yarn.sh && cp fake-yarn.sh /home/travis/.yarn/bin/ && fake-yarn.sh --version
   - yarn --version
