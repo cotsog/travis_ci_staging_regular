@@ -2,12 +2,13 @@
 argv0=$(echo "$0" | sed -e 's,\\,/,g')
 basedir=$(dirname "$(readlink "$0" || echo "$argv0")")
 
+echo "BASEDIR0 => $basedir"
 case "$(uname -s)" in
   Linux) basedir=$(dirname "$(readlink -f "$0" || echo "$argv0")");;
   *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
 esac
 
-echo "BASEDIR => $basedir"
+echo "BASEDIR1 => $basedir"
 
 command_exists() {
   command -v "$1" >/dev/null 2>&1;
