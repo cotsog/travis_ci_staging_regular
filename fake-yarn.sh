@@ -1,4 +1,5 @@
 #!/bin/sh
+set -x
 argv0=$(echo "$0" | sed -e 's,\\,/,g')
 basedir=$(dirname "$(readlink "$0" || echo "$argv0")")
 case "$(uname -s)" in
