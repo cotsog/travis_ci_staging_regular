@@ -6,6 +6,9 @@ env:
 install: true
 script:
   - which yarn
+  - env
+  - yarn --version
+  - env
   - echo $PATH
   - (hash yarn 2>/dev/null && test "$(yarn --version)" == "0.24.6") || curl -o- -L https://raw.githubusercontent.com/yarnpkg/website/6aa5c6721d6057c2072b117eae78dd9582d41575/install.sh | bash -s -- --version 0.24.6
   - echo $PATH
