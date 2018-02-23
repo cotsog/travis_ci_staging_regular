@@ -14,4 +14,5 @@ script:
   - chmod +x fake-yarn.sh && cp fake-yarn.sh /home/travis/.yarn/bin/ && fake-yarn.sh --version
   - cat /home/travis/.yarn/bin/yarn.js
   - node /home/travis/.yarn/bin/yarn.js --version
+  - winpty node /home/travis/.yarn/bin/yarn.js --version
   - yarn --version
