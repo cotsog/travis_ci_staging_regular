@@ -1,5 +1,8 @@
 language: node_js
 node_js: 8.9.3
+env:
+  global:
+    - PATH="$HOME/.yarn/bin:$PATH"
 install: true
 script:
   - which yarn
