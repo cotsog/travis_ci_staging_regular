@@ -4,15 +4,7 @@ env:
   global:
     - PATH="$HOME/.yarn/bin:$PATH"
 
-matrix:
-  include:
-    - env: FOO=GOOD
-    - env: FOO=BAD
-      before_script: yarn --version
-
-install:
-  - which yarn
-  - hash
+install: true
 script:
   - which yarn
   - hash
