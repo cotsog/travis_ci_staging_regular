@@ -1,14 +1,39 @@
-language: node_js
-node_js: 8.9.3
-env:
-  global:
-    - PATH="$HOME/.yarn/bin:$PATH"
-
+addons: 
+  apt:
+    config:
+      retries: true
+    sources: 
+      - mysql-5.7-trusty
+    packages:
+      - mysql-server
+      - mysql-client
+dist: trusty
+env: 
+  - CI_NODE_INDEX=0
+  - CI_NODE_INDEX=1	
+  - CI_NODE_INDEX=2	
+  - CI_NODE_INDEX=3	
+  - CI_NODE_INDEX=4	
+  - CI_NODE_INDEX=5	
+  - CI_NODE_INDEX=6	
+  - CI_NODE_INDEX=7	
+  - CI_NODE_INDEX=8	
+  - CI_NODE_INDEX=9	
+  - CI_NODE_INDEX=10	
+  - CI_NODE_INDEX=11	
+  - CI_NODE_INDEX=12	
+  - CI_NODE_INDEX=13	
+  - CI_NODE_INDEX=14	
+  - CI_NODE_INDEX=15
+filter_secrets: false
+group: travis_lts
 install: true
+language: ruby
 script:
-  - which yarn
-  - hash
-  - (test "$(yarn --version)" == "0.24.6") || curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.24.6
-  - which yarn
-  - hash
-  - yarn --version && test "$(yarn --version)" == "0.24.6"
+  - sudo -E apt-get -yq update &> ~/apt-get-update.log
+  - while (cat ~/apt-get-update.log | grep -e "Could not connect to repo.mysql.com"); do sleep 5 && mtr -r repo.mysql.com && sudo -E apt-get -yq update &> ~/apt-get-update.log; done
+  - travis_retry sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install mysql-server mysql-client
+  - mysql --version
+after_failure:
+  - cat ~/apt-get-update.log
+sudo: required
