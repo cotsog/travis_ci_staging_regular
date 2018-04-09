@@ -1,31 +1,19 @@
-addons: 
-  apt:
-    sources: 
-      - mysql-5.7-trusty
-    packages:
-      - mysql-server
-      - mysql-client
-dist: trusty
-env: 
-  - CI_NODE_INDEX=0
-  - CI_NODE_INDEX=1	
-  - CI_NODE_INDEX=2	
-  - CI_NODE_INDEX=3	
-  - CI_NODE_INDEX=4	
-  - CI_NODE_INDEX=5	
-  - CI_NODE_INDEX=6	
-  - CI_NODE_INDEX=7	
-  - CI_NODE_INDEX=8	
-  - CI_NODE_INDEX=9	
-  - CI_NODE_INDEX=10	
-  - CI_NODE_INDEX=11	
-  - CI_NODE_INDEX=12	
-  - CI_NODE_INDEX=13	
-  - CI_NODE_INDEX=14	
-  - CI_NODE_INDEX=15
-filter_secrets: false
-group: travis_lts
+language: objective-c
+
+osx_image: xcode9.3
+
 install: true
-language: ruby
-script: true
-sudo: required
+
+script:
+  - uname -a
+  - sw_vers
+  - xcodebuild -version
+  - xcrun simctl list
+  - xcrun simctl list pairs
+  - df -h /
+  - brew list --versions
+  - brew cask list --versions
+  - if [[ $(uname -r) == 15.6.0 ]]; then nvm list; else echo "nope"; fi
+  - rvm list
+  - motion --version
+  - pod --version
