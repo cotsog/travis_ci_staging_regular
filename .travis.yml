@@ -1,19 +1,28 @@
-language: objective-c
-
-osx_image: xcode9.3
-
-install: true
-
-script:
-  - uname -a
-  - sw_vers
-  - xcodebuild -version
-  - xcrun simctl list
-  - xcrun simctl list pairs
-  - df -h /
-  - brew list --versions
-  - brew cask list --versions
-  - if [[ $(uname -r) == 15.6.0 ]]; then nvm list; else echo "nope"; fi
-  - rvm list
-  - motion --version
-  - pod --version
+language: python
+dist: trusty
+sudo: required
+install: skip
+services: mongod
+jobs:
+    include:
+        - env: dist=precise
+          dist: precise
+        - env: dist=trusty
+          dist: trusty
+        - env: dist=trusty
+          dist: trusty
+          group: deprecated-2017Q1
+        - env: dist=trusty
+          dist: trusty
+          group: deprecated-2017Q2
+        - env: dist=trusty
+          dist: trusty
+          group: deprecated-2017Q3
+        - env: dist=trusty
+          dist: trusty
+          group: deprecated-2017Q4
+        - env: dist=xenial
+          dist: xenial
+script: mongo --eval 'db.version()'
+notifications:
+  email: never
