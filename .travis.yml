@@ -1,4 +1,3 @@
-# Trigger one build
 matrix:
   include:
     - env: NO_SUDO=true
