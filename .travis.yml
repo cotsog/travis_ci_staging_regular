@@ -1,2 +1,7 @@
+matrix:
+  include:
+    - env: NO_SUDO=true
+    - sudo: false
+    - sudo: required
 install: true
 script: true
