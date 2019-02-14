@@ -1,9 +1,2 @@
-# trigger
-matrix:
-  include:
-    - env: NO_SUDO=true
-    - sudo: false
-    - sudo: required
-    - sudo: deprecated
 install: true
-script: true
+script: echo "test!"
