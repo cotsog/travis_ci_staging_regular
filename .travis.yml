@@ -1,9 +1,11 @@
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
+language: python
+
+dist: trusty
+
+python:
+  - 2.6
+  - 2.7
+  - 3.6
 
 install: true
 script: echo "test!"
