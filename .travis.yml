@@ -9,4 +9,6 @@ python:
   - 3.7.2
 
 install: true
-script: echo "test!"
+script:
+  - |
+    if [ `python --version` != "Python $TRAVIS_PYTHON_VERSION" ]; then false; fi
