@@ -1,13 +1,20 @@
-language: php
+language: objective-c
 
-dist: trusty
+osx_image:
+  - xcode10.1
+  - xcode9.3
 
-python:
-  - 7.2.4
+matrix:
+  include:
+    - language: ruby
+      dist: trusty
+      env: DIST=trusty
+    - language: ruby
+      dist: xenial
+      env: DIST=xenial
 
 install: true
-script:
-  - export CURRENT_PYTHON_VERSION=`python --version`
-  - echo "$CURRENT_PYTHON_VERSION"
-  - echo "Python $TRAVIS_PYTHON_VERSION"
-  - if [ "$CURRENT_PYTHON_VERSION" != "Python $TRAVIS_PYTHON_VERSION" ]; then echo "false!"; false; fi
+script: true
+
+notifications:
+  email: false
