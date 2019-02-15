@@ -14,7 +14,7 @@ matrix:
       env: DIST=xenial
 
 install: true
-script: true
+script: git config -l
 
 notifications:
   email: false
