@@ -1,12 +1,12 @@
 language: python
 
-dist: trusty
+dist: xenial
 
 python:
-  - 2.6.9
-  - 2.7.10
-  - 3.2.6
-  - 3.5.0
+  - 2.7.13
+  - 3.4.5
+  - 3.6.8
+  - 3.7.2
 
 install: true
 script: echo "test!"
