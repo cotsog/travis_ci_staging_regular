@@ -10,5 +10,5 @@ python:
 
 install: true
 script:
-  - |
-    if [ `python --version` != "Python $TRAVIS_PYTHON_VERSION" ]; then false; fi
+  - export CURRENT_PYTHON_VERSION=`python --version`
+  - if [ $CURRENT_PYTHON_VERSION != "Python $TRAVIS_PYTHON_VERSION" ]; then false; fi
