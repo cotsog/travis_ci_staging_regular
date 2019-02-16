@@ -1,7 +1,9 @@
 language: android
 
 install: true
-script: git version
+script:
+  - git version
+  - git config -l
 
 notifications:
   email: false
