@@ -6,6 +6,10 @@ osx_image:
   - xcode9.3
   - xcode9.3-moar
   - xcode9.2
+  
+matrix:
+  include:
+    - language: android
 
 install: true
 script: git version
