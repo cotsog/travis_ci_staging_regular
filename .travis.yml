@@ -1,14 +1,4 @@
-language: c
+language: ruby
 
-matrix:
-  include:
-    - name: "haxm-darwin"
-      os: osx
-      osx_image: xcode10
-      addons:
-        homebrew:
-          packages:
-            - nasm
-      script:
-        - cd platforms/darwin
-        - xcodebuild -configuration Debug -sdk macosx10.14
+install: true
+script: true
