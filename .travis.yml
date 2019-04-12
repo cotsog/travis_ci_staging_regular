@@ -1,4 +1,10 @@
-language: ruby
+dist: xenial
+
+language: java
+jdk: oraclejdk11
 
 install: true
 script: true
+
+notifications:
+  email: false
