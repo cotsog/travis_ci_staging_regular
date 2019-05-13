@@ -7,7 +7,9 @@ deploy:
   provider: script
   script: echo "deploy!"
   on:
-    branch: dev
+    branch:
+      - dev
+      - release
 
 notifications:
   email: false
