@@ -3,7 +3,7 @@ language: ruby
 install: true
 script: true
 
-deployment:
+deploy:
   provider: script
   script: echo "deploy!"
   on:
