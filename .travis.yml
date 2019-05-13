@@ -1,8 +1,14 @@
+language: ruby
 
-sudo: required
-dist: trusty
-services: docker
-language: minimal
-script:
-  - chmod +x ./testDockerScripts.sh
-  - ./testDockerScripts.sh
+install: true
+script: true
+
+deployment:
+  provider: script
+  script: echo "deploy!"
+  on:
+    branches:
+      - dev
+
+notifications:
+  email: false
