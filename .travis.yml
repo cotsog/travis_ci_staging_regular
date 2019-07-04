@@ -1,15 +1,9 @@
-language: ruby
+language: objective-c
+
+osx_image: xcode11
 
 install: true
 script: true
-
-deploy:
-  provider: script
-  script: echo "deploy!"
-  on:
-    branch:
-      - dev
-      - release
 
 notifications:
   email: false
