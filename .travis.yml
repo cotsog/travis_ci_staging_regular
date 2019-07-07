@@ -1,9 +1,15 @@
-language: objective-c
+dist: trusty
+language: java
 
-osx_image: xcode11
+jdk:
+  - oraclejdk8
+  - oraclejdk9
+  - openjdk8
+  - openjdk9
+  - openjdk10
 
 install: true
-script: true
 
-notifications:
-  email: false
+script:
+  - $JAVA_HOME/bin/javac -version
+  - mvn --version
